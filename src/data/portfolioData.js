@@ -4,6 +4,9 @@ export const portfolioData = {
     title: "Computer Science Undergraduate & Full-Stack Developer",
     phone: "+91-8810750577",
     email: "kaushalmaurya055@gmail.com",
+    avatar: "/kaushal-avatar.jpg",
+    portrait: "/kaushal-portrait.jpg",
+    heroImage: "/kaushal-hero.png",
     roles: [
       "Computer Science Undergraduate",
       "Full-Stack Web Developer",
@@ -25,12 +28,12 @@ export const portfolioData = {
   },
 
   socials: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    leetcode: "https://leetcode.com",
-    hackerrank: "https://hackerrank.com",
-    geeksforgeeks: "https://geeksforgeeks.org",
-    codechef: "https://codechef.com",
+    github: "https://github.com/Code-With-Kaushal-hub",
+    linkedin: "https://www.linkedin.com/in/kaushal-maurya-01b249346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    leetcode: "https://leetcode.com/u/Kaushal_Maurya_055/",
+    hackerrank: "https://www.hackerrank.com/profile/kaushalmaurya055",
+    geeksforgeeks: "https://www.geeksforgeeks.org/profile/kaushalmaajj5?tab=activity",
+    codechef: "https://www.codechef.com/users/chef_kaushal",
     email: "mailto:kaushalmaurya055@gmail.com",
     phone: "tel:+918810750577"
   },
@@ -60,28 +63,32 @@ export const portfolioData = {
       platform: "LeetCode",
       badge: "Competitive Programming",
       description: "Solved over 400 algorithmic problems on LeetCode with an impressive 1700+ contest rating, reflecting consistent speed and deep problem-solving skills.",
-      highlight: "1700+ Rating | 400+ Solved"
+      highlight: "1700+ Rating | 400+ Solved",
+      verifyLink: "https://leetcode.com/u/Kaushal_Maurya_055/"
     },
     {
       title: "88% Score in Programming with Java",
       platform: "NPTEL (IIT Kharagpur)",
       badge: "Elite Certification",
       description: "Scored 88% in the certification exam conducted by IIT Kharagpur, demonstrating mastery in Java fundamentals, OOP, and exception handling.",
-      highlight: "88% Elite (IIT Kharagpur)"
+      highlight: "88% Elite (IIT Kharagpur)",
+      verifyLink: "https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/106/noc25-cs110/Course/NPTEL25CS110S35990025010573345.pdf"
     },
     {
       title: "Silver Badge (82%) in Joy of Computing using Python",
       platform: "NPTEL (IIT Madras)",
       badge: "Silver Medalist",
-      description: "Earned the Silver Badge certification from IIT Madras for scoring 82% in Python computational thinking and algorithmic problem solving.",
-      highlight: "Silver Badge 82% (IIT Madras)"
+      description: "Earned the Silver Badge certification from IIT Madras for scoring 82% in Python computational logic, data manipulation, and algorithms.",
+      highlight: "Silver Badge 82% (IIT Madras)",
+      verifyLink: "https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/106/noc25-cs69/Course/NPTEL25CS69S104870027404454790.pdf"
     },
     {
       title: "Active Contender Across Coding Platforms",
       platform: "LeetCode • CodeChef • HackerRank • GeeksForGeeks",
       badge: "Algorithmic Rigor",
       description: "Active problem solver across major coding platforms, constantly challenging and refining data structure concepts and edge-case handling.",
-      highlight: "Multi-Platform Coder"
+      highlight: "Multi-Platform Coder",
+      verifyLink: "https://www.codechef.com/users/chef_kaushal"
     }
   ],
 
@@ -126,53 +133,67 @@ export const portfolioData = {
 
   certifications: [
     {
+      id: "cert-db",
       title: "Introduction to Database System",
       issuer: "NPTEL (IIT Madras)",
       period: "Jan - Apr 2026",
       type: "Database Systems",
-      description: "Relational database concepts, SQL querying, schema normalization, and transaction processing."
+      description: "Relational database concepts, SQL querying, schema normalization, and transaction processing.",
+      link: "https://drive.google.com/file/d/1jBUpF8mREYbptMquf8BSP1EYLBDJbpPj/view?usp=drivesdk"
     },
     {
-      title: "Programming in Modern C++",
-      issuer: "NPTEL (IIT Kharagpur)",
-      period: "Jan - Apr 2026",
-      type: "Programming Languages",
-      description: "Modern C++ features, STL algorithms, smart pointers, and high-performance object-oriented programming."
-    },
-    {
+      id: "cert-java",
       title: "Programming with Java (88% Elite)",
       issuer: "NPTEL (IIT Kharagpur)",
       period: "Jul - Oct 2025",
       type: "Elite (88%)",
-      description: "Scored 88% covering Java language specifications, OOP concepts, multithreading, and collections framework."
+      description: "Scored 88% covering Java language specifications, OOP concepts, multithreading, and collections framework.",
+      link: "https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/106/noc25-cs110/Course/NPTEL25CS110S35990025010573345.pdf"
     },
     {
+      id: "cert-cpp",
+      title: "Programming in Modern C++",
+      issuer: "NPTEL (IIT Kharagpur)",
+      period: "Jan - Apr 2026",
+      type: "Programming Languages",
+      description: "Modern C++ features, STL algorithms, smart pointers, and high-performance object-oriented programming.",
+      link: "https://drive.google.com/file/d/1UKIP4kK3j16QFhzBSzqkvLfIlzX_lajC/view?usp=drivesdk"
+    },
+    {
+      id: "cert-python-nptel",
       title: "The Joy of Computing using Python (Silver Badge 82%)",
       issuer: "NPTEL (IIT Madras)",
       period: "Jan - Apr 2025",
       type: "Silver Badge (82%)",
-      description: "Awarded Silver Badge for achieving 82% in Python computational logic, data manipulation, and algorithms."
+      description: "Awarded Silver Badge for achieving 82% in Python computational logic, data manipulation, and algorithms.",
+      link: "https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/106/noc25-cs69/Course/NPTEL25CS69S104870027404454790.pdf"
     },
     {
+      id: "cert-hackerrank-python",
       title: "Python Basic",
       issuer: "HackerRank",
       period: "April 2025",
       type: "Skill Certification",
-      description: "Verified proficiency in Python syntax, functions, basic data structures, and algorithmic scripting."
+      description: "Verified proficiency in Python syntax, functions, basic data structures, and algorithmic scripting.",
+      link: "https://www.hackerrank.com/certificates/f921536250d5"
     },
     {
+      id: "cert-guvi-sql",
       title: "SQL Basic",
       issuer: "GUVI",
       period: "April 2025",
       type: "Database Certification",
-      description: "Hands-on querying, relational schema manipulation, filtering, and aggregate operations in SQL."
+      description: "Hands-on querying, relational schema manipulation, filtering, and aggregate operations in SQL.",
+      link: "https://www.guvi.in/share-certificate/56N3y525W4wg4Z7133"
     },
     {
+      id: "cert-guvi-python",
       title: "Python Zero to Hero",
       issuer: "GUVI",
       period: "December 2024",
       type: "Programming Certification",
-      description: "In-depth foundational understanding of Python programming, control flows, and application logic."
+      description: "In-depth foundational understanding of Python programming, control flows, and application logic.",
+      link: "https://www.guvi.in/share-certificate/1u17lf310n2550q172"
     }
   ],
 
@@ -228,6 +249,31 @@ export const portfolioData = {
 
   projects: [
     {
+      id: "netflix-clone",
+      title: "Netflix Clone",
+      subtitle: "Dynamic Video Streaming & Movie Discovery Web Application",
+      category: "Frontend & React",
+      duration: "1 Week",
+      featured: true,
+      description: "A responsive Netflix Clone web application featuring dynamic movie catalog browsing, video trailers playback, responsive UI, categorization by genre, and real-time movie API integration.",
+      longDescription: "Developed a full-featured Netflix Clone replicating the core visual aesthetic and user flow of the world's leading video streaming platform. Integrates with TMDB REST APIs to dynamically fetch trending movies, top-rated series, and genre categories. Built with responsive React components, trailer video modal embedding, custom horizontal carousels, and deployed live on Vercel.",
+      image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=1200&q=80",
+      tags: ["React.js", "JavaScript", "TMDB API", "Tailwind / CSS3", "Vercel", "REST APIs"],
+      metrics: [
+        { label: "Framework", value: "React.js" },
+        { label: "Hosting", value: "Vercel Live" },
+        { label: "API Source", value: "TMDB REST API" }
+      ],
+      github: "https://github.com/Code-With-Kaushal-hub/Netflix-clone",
+      demo: "https://netflix-clone-nine-ashy.vercel.app/",
+      highlights: [
+        "Dynamic movie catalog integration fetching real-time trending titles via TMDB API",
+        "Interactive trailer video modal playback with seamless streaming UI",
+        "Fluid Netflix-style horizontal row sliders and responsive banner billboard",
+        "Deployed live on Vercel with mobile-first responsive design"
+      ]
+    },
+    {
       id: "expense-tracker",
       title: "Expense Tracker",
       subtitle: "Full-Stack Financial Record & Budget Management Web Application",
@@ -243,8 +289,8 @@ export const portfolioData = {
         { label: "Database", value: "MySQL Storage" },
         { label: "Timeline", value: "1 Week Sprint" }
       ],
-      github: "https://github.com",
-      demo: "https://example.com",
+      github: "https://github.com/Code-With-Kaushal-hub/expense-tracker",
+      demo: "https://expense-tracker-omega-red.vercel.app/#add",
       highlights: [
         "Developed a full-stack Expense Tracker with features to add, view, and delete expenses",
         "Implemented REST APIs for efficient expense management and data retrieval",
@@ -260,7 +306,7 @@ export const portfolioData = {
       duration: "1 Week",
       featured: true,
       description: "A responsive web application to help users search and discover food recipes dynamically, built with React components, modern frontend technologies, and deployed on Vercel.",
-      longDescription: "Developed a responsive web application to help users search and discover food recipes easily. Built a user-friendly interface using React components, hooks, and modern frontend technologies. Styled with Bootstrap for full cross-device responsiveness and deployed the application live on Vercel for instant online access.",
+      longDescription: "Developed a responsive web application to help users search and discover food recipes easily. Built a user-friendly interface using React components, hooks, and modern frontend technologies. Structured with clean state management and search filtering, and deployed live on Vercel for easy online access.",
       image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=80",
       tags: ["React.js", "JavaScript", "Vite", "Bootstrap", "Vercel", "REST APIs"],
       metrics: [
@@ -268,8 +314,8 @@ export const portfolioData = {
         { label: "Hosting", value: "Vercel Live" },
         { label: "Timeline", value: "1 Week Sprint" }
       ],
-      github: "https://github.com",
-      demo: "https://example.com",
+      github: "https://github.com/Code-With-Kaushal-hub/Food-recipe-finder-react",
+      demo: "https://food-recipe-finder-react.vercel.app/",
       highlights: [
         "Developed a responsive web application to help users search and discover food recipes",
         "Built a user-friendly interface using React components and modern frontend technologies",
@@ -285,7 +331,7 @@ export const portfolioData = {
       duration: "1 Week",
       featured: true,
       description: "A modern personal portfolio website built with HTML5, CSS3, JavaScript, and React to showcase engineering projects, certifications, and technical proficiencies.",
-      longDescription: "Built a personal portfolio website to showcase projects and technical skills. Applied logical reasoning and problem-solving to improve navigation and user experience. Enhanced responsiveness through rigorous testing and iterative refinements, and followed structured coding practices to improve maintainability.",
+      longDescription: "Built a personal portfolio website to showcase projects and technical skills. Applied logical reasoning and problem-solving to improve navigation and user experience. Enhanced responsiveness through testing and iterative refinements, and followed structured coding practices to improve maintainability.",
       image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
       tags: ["HTML5", "CSS3", "JavaScript", "React", "Tailwind CSS", "Vite"],
       metrics: [
@@ -293,8 +339,8 @@ export const portfolioData = {
         { label: "UX Polish", value: "Iterative Testing" },
         { label: "Timeline", value: "1 Week Sprint" }
       ],
-      github: "https://github.com",
-      demo: "https://example.com",
+      github: "https://github.com/Code-With-Kaushal-hub/Portfolio-Website",
+      demo: "https://portfolio-website-three-nu-70.vercel.app/",
       highlights: [
         "Built a personal portfolio website to showcase projects and technical skills",
         "Applied logical reasoning and problem-solving to improve navigation and user experience",
@@ -309,8 +355,8 @@ export const portfolioData = {
     { cmd: "about", desc: "Display Kaushal's background & career objective" },
     { cmd: "education", desc: "Display B.Tech CSE details & school credentials" },
     { cmd: "skills", desc: "Display programming languages & technical stack" },
-    { cmd: "projects", desc: "List Expense Tracker, Food Recipe Finder, & Portfolio" },
-    { cmd: "certifications", desc: "Display 7+ certifications from NPTEL, HackerRank, GUVI" },
+    { cmd: "projects", desc: "List Netflix Clone, Expense Tracker, Food Recipe Finder, & Portfolio with live links" },
+    { cmd: "certifications", desc: "Display 7+ certifications with verification URLs" },
     { cmd: "achievements", desc: "Display LeetCode 400+ solved & 1700+ rating" },
     { cmd: "contact", desc: "Show phone (+91-8810750577), email, and social profiles" },
     { cmd: "sudo hire kaushal", desc: "Execute priority internship/role protocol" },

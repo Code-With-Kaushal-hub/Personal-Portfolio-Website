@@ -9,13 +9,14 @@ import {
   Code2, 
   Trophy, 
   Cpu, 
-  Layers, 
   Sparkles,
-  BookOpen
+  BookOpen,
+  CheckCircle2,
+  ExternalLink
 } from 'lucide-react';
 
 export default function About() {
-  const { personal, aboutHighlights } = portfolioData;
+  const { personal, aboutHighlights, socials } = portfolioData;
 
   const iconMap = {
     0: <Trophy className="w-6 h-6 text-amber-400" />,
@@ -40,60 +41,70 @@ export default function About() {
               strong algorithmic foundations.
             </span>
           </h2>
-          
-          {/* Resume Career Objective Quote */}
-          <div className="p-5 rounded-2xl glass-panel border border-cyan-500/20 text-slate-300 text-base sm:text-lg leading-relaxed max-w-4xl italic">
-            "{personal.careerObjective}"
-          </div>
         </div>
 
-        {/* Quick Facts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
+        {/* Bio Spotlight with Photo */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-center">
           
-          <div className="glass-panel p-4 rounded-xl border border-slate-800 flex items-center gap-3">
-            <div className="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-400">
-              <GraduationCap className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-xs font-mono text-slate-500 uppercase">Education</div>
-              <div className="text-xs font-bold text-white">B.Tech CSE (2023-2027)</div>
-              <div className="text-[11px] font-mono text-cyan-400">CGPA: 8.11 (80.8%)</div>
+          {/* Avatar Photo Card */}
+          <div className="lg:col-span-4">
+            <div className="glass-panel p-4 rounded-3xl border border-cyan-500/30 shadow-2xl relative group">
+              <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                <img
+                  src={personal.avatar}
+                  alt={personal.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-mono">
+                  <div className="flex items-center gap-1.5 text-white font-bold">
+                    <span>{personal.name}</span>
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400" />
+                  </div>
+                  <span className="text-emerald-400 font-medium">B.Tech 2023-27</span>
+                </div>
+              </div>
+
+              <div className="pt-3 px-1 flex items-center justify-between text-xs font-mono text-slate-400">
+                <span>Maharana Pratap Engg. College</span>
+                <span className="text-cyan-400 font-bold">CGPA: 8.11</span>
+              </div>
             </div>
           </div>
 
-          <div className="glass-panel p-4 rounded-xl border border-slate-800 flex items-center gap-3">
-            <div className="p-2.5 rounded-lg bg-purple-500/10 text-purple-400">
-              <BookOpen className="w-5 h-5" />
+          {/* Career Objective & Academic Highlights */}
+          <div className="lg:col-span-8 space-y-6">
+            <div className="p-6 sm:p-7 rounded-2xl glass-panel border border-cyan-500/20 text-slate-300 text-base sm:text-lg leading-relaxed relative">
+              <div className="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2 flex items-center gap-2">
+                <TerminalSquare className="w-4 h-4" />
+                <span>Resume Career Objective</span>
+              </div>
+              <p className="italic text-slate-200">
+                "{personal.careerObjective}"
+              </p>
             </div>
-            <div>
-              <div className="text-xs font-mono text-slate-500 uppercase">Institution</div>
-              <div className="text-xs font-bold text-white">MPEC, Kanpur</div>
-              <div className="text-[11px] font-mono text-slate-400">Kanpur, UP, India</div>
-            </div>
-          </div>
 
-          <div className="glass-panel p-4 rounded-xl border border-slate-800 flex items-center gap-3">
-            <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-400">
-              <Trophy className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-xs font-mono text-slate-500 uppercase">LeetCode Rating</div>
-              <div className="text-xs font-bold text-amber-400">1700+ Rating</div>
-              <div className="text-[11px] font-mono text-slate-400">400+ Problems Solved</div>
-            </div>
-          </div>
+            {/* Quick Facts Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="glass-panel p-4 rounded-xl border border-slate-800 space-y-1">
+                <div className="text-[11px] font-mono text-slate-500 uppercase">Degree & CGPA</div>
+                <div className="text-sm font-bold text-white">B.Tech CSE (8.11)</div>
+                <div className="text-xs text-cyan-400">80.8% Percentage</div>
+              </div>
 
-          <div className="glass-panel p-4 rounded-xl border border-slate-800 flex items-center gap-3">
-            <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
-              <Phone className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-xs font-mono text-slate-500 uppercase">Direct Contact</div>
-              <a href="tel:+918810750577" className="text-xs font-bold text-slate-200 hover:text-emerald-400 transition-colors">
-                +91-8810750577
-              </a>
-              <div className="text-[11px] font-mono text-slate-400 truncate max-w-[150px]">
-                {personal.email}
+              <div className="glass-panel p-4 rounded-xl border border-slate-800 space-y-1">
+                <div className="text-[11px] font-mono text-slate-500 uppercase">Competitive Rating</div>
+                <div className="text-sm font-bold text-amber-400">LeetCode 1700+</div>
+                <div className="text-xs text-slate-400">400+ Problems Solved</div>
+              </div>
+
+              <div className="glass-panel p-4 rounded-xl border border-slate-800 space-y-1">
+                <div className="text-[11px] font-mono text-slate-500 uppercase">Direct Contact</div>
+                <a href="tel:+918810750577" className="text-sm font-bold text-slate-200 hover:text-emerald-400 transition-colors block">
+                  +91-8810750577
+                </a>
+                <div className="text-xs text-slate-400 truncate">{personal.email}</div>
               </div>
             </div>
           </div>

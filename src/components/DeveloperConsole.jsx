@@ -49,8 +49,8 @@ export default function DeveloperConsole() {
   • about           - Career objective, background & education summary
   • education       - College (B.Tech CSE, CGPA 8.11) & school academic records
   • skills          - C++, Java, Python, ReactJS, NodeJS, MySQL, etc.
-  • projects        - Expense Tracker, Food Recipe Finder, & Portfolio
-  • certifications  - NPTEL IIT Madras, IIT Kharagpur (Java 88%, Python 82%), GUVI
+  • projects        - Expense Tracker, Food Recipe Finder, & Portfolio (with live URLs)
+  • certifications  - Verified NPTEL IIT Madras, IIT Kharagpur, GUVI cert links
   • achievements    - LeetCode 400+ solved, 1700+ rating, Silver Badge
   • contact         - Phone (+91-8810750577), email, and social profiles
   • sudo hire kaushal - Execute priority internship/role protocol
@@ -83,19 +83,19 @@ Objective:
 
       case 'projects':
         responseText = projects
-          .map((p, idx) => `${idx + 1}. ${p.title} (${p.category}) [${p.duration}]\n   ${p.description}\n   Tech: ${p.tags.join(', ')}`)
+          .map((p, idx) => `${idx + 1}. ${p.title} (${p.category}) [${p.duration}]\n   ${p.description}\n   Tech: ${p.tags.join(', ')}\n   Demo: ${p.demo}\n   Code: ${p.github}`)
           .join('\n\n');
         break;
 
       case 'certifications':
         responseText = certifications
-          .map((c, idx) => `${idx + 1}. ${c.title} - ${c.issuer} (${c.period})`)
-          .join('\n');
+          .map((c, idx) => `${idx + 1}. ${c.title}\n   Issuer: ${c.issuer} (${c.period})\n   Verify: ${c.link}`)
+          .join('\n\n');
         break;
 
       case 'achievements':
         responseText = achievements
-          .map((a, idx) => `• ${a.title} (${a.platform})\n  ${a.description}`)
+          .map((a, idx) => `• ${a.title} (${a.platform})\n  ${a.description}\n  Verify: ${a.verifyLink || 'N/A'}`)
           .join('\n\n');
         break;
 
@@ -263,7 +263,7 @@ Direct Line: ${personal.phone} | ${personal.email}`;
                 value={inputVal}
                 onChange={(e) => setInputVal(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Type command here (e.g. help, education, achievements, contact)..."
+                placeholder="Type command here (e.g. certifications, projects, education)..."
                 className="flex-1 bg-transparent border-none outline-none text-cyan-300 font-mono text-xs sm:text-sm placeholder-slate-600 focus:ring-0"
                 autoComplete="off"
                 spellCheck="false"

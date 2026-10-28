@@ -8,12 +8,11 @@ import {
   TerminalSquare, 
   ExternalLink,
   Flame,
-  Zap,
-  Target
+  FileText
 } from 'lucide-react';
 
 export default function Achievements() {
-  const { achievements, socials, personal } = portfolioData;
+  const { achievements, socials } = portfolioData;
 
   const platforms = [
     {
@@ -29,7 +28,7 @@ export default function Achievements() {
       name: 'NPTEL Java (IIT Kharagpur)',
       stat: '88% Score (Elite)',
       badge: 'OOP Mastery',
-      url: '#education',
+      url: 'https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/106/noc25-cs110/Course/NPTEL25CS110S35990025010573345.pdf',
       color: 'from-cyan-500/20 to-blue-500/10',
       border: 'border-cyan-500/30',
       text: 'text-cyan-400',
@@ -38,7 +37,7 @@ export default function Achievements() {
       name: 'NPTEL Python (IIT Madras)',
       stat: '82% Score (Silver Badge)',
       badge: 'Silver Medalist',
-      url: '#education',
+      url: 'https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/106/noc25-cs69/Course/NPTEL25CS69S104870027404454790.pdf',
       color: 'from-purple-500/20 to-pink-500/10',
       border: 'border-purple-500/30',
       text: 'text-purple-400',
@@ -78,19 +77,22 @@ export default function Achievements() {
         {/* 4 Stat Highlights */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {platforms.map((p) => (
-            <div
+            <a
               key={p.name}
-              className={`glass-panel p-5 rounded-2xl border ${p.border} bg-gradient-to-br ${p.color} space-y-3 hover:-translate-y-1 transition-all duration-300`}
+              href={p.url}
+              target="_blank"
+              rel="noreferrer"
+              className={`glass-panel p-5 rounded-2xl border ${p.border} bg-gradient-to-br ${p.color} space-y-3 hover:-translate-y-1 transition-all duration-300 group block`}
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">{p.badge}</span>
-                <Trophy className={`w-4 h-4 ${p.text}`} />
+                <ExternalLink className={`w-3.5 h-3.5 ${p.text} opacity-0 group-hover:opacity-100 transition-opacity`} />
               </div>
               <div>
-                <h4 className="text-lg font-bold text-white">{p.name}</h4>
+                <h4 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">{p.name}</h4>
                 <p className={`text-sm font-mono font-semibold ${p.text} mt-0.5`}>{p.stat}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
@@ -99,9 +101,9 @@ export default function Achievements() {
           {achievements.map((item) => (
             <div
               key={item.title}
-              className="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800/80 hover:border-amber-500/40 transition-all duration-300 group hover:-translate-y-1 relative overflow-hidden"
+              className="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800/80 hover:border-amber-500/40 transition-all duration-300 group hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between"
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 mb-4">
                 <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 group-hover:border-amber-500/40 transition-colors">
                   <Award className="w-6 h-6 text-amber-400" />
                 </div>
@@ -128,6 +130,22 @@ export default function Achievements() {
                   </p>
                 </div>
               </div>
+
+              {/* Verify Link Button */}
+              {item.verifyLink && (
+                <div className="pt-3 border-t border-slate-800/80 flex items-center justify-end">
+                  <a
+                    href={item.verifyLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-semibold text-amber-300 bg-amber-950/40 border border-amber-700/50 hover:bg-amber-900/60 transition-colors"
+                  >
+                    <FileText className="w-3.5 h-3.5 text-amber-400" />
+                    <span>Verify Credential</span>
+                    <ExternalLink className="w-3 h-3 text-amber-400" />
+                  </a>
+                </div>
+              )}
             </div>
           ))}
         </div>

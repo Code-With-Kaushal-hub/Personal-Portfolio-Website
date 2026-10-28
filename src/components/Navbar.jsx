@@ -54,14 +54,18 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo with Kaushal's Avatar */}
           <a
             href="#"
             className="flex items-center gap-3 group"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-all duration-300">
-              <span className="font-mono font-bold text-cyan-400 tracking-wider text-base">KM</span>
-              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-cyan-400 rounded-full animate-ping opacity-75" />
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl overflow-hidden border border-cyan-500/40 group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-all duration-300 bg-slate-900">
+              <img
+                src={portfolioData.personal.avatar}
+                alt={portfolioData.personal.name}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 rounded-full border border-slate-950" />
             </div>
             <div className="flex flex-col">
               <span className="font-bold tracking-tight text-white group-hover:text-cyan-300 transition-colors">
@@ -132,12 +136,16 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden glass-panel mt-3 mx-4 rounded-2xl border border-cyan-500/20 p-5 space-y-4 animate-in fade-in slide-in-from-top-4 duration-200">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-800 text-xs font-mono">
-            <span className="text-slate-400">CGPA: 8.11 | LeetCode 1700+</span>
-            <span className="text-emerald-400 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              Available
-            </span>
+          <div className="flex items-center gap-3 pb-3 border-b border-slate-800">
+            <img
+              src={portfolioData.personal.avatar}
+              alt={portfolioData.personal.name}
+              className="w-10 h-10 rounded-xl object-cover border border-cyan-500/30"
+            />
+            <div>
+              <div className="text-sm font-bold text-white">{portfolioData.personal.name}</div>
+              <div className="text-xs font-mono text-cyan-400">CGPA: 8.11 • LeetCode 1700+</div>
+            </div>
           </div>
 
           <div className="flex flex-col space-y-2">

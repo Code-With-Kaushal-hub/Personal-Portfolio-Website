@@ -33,12 +33,18 @@ Aligned 100% with Kaushal's official resume, academic credentials from **Maharan
 - **Python Zero to Hero** – GUVI (December 2024)
 
 ### 4. Projects Showcase
+- **Netflix Clone** (React.js, JavaScript, TMDB API, Tailwind CSS, Vercel)
+  - Dynamic streaming catalog, trailer playback, responsive category carousels.
+  - [Live Demo](https://netflix-clone-nine-ashy.vercel.app/) • [GitHub Repo](https://github.com/Code-With-Kaushal-hub/Netflix-clone)
 - **Expense Tracker** (HTML, CSS, JavaScript, Flask, MySQL)
   - Full-stack expense management, REST APIs, responsive UI, persistent MySQL storage with secure config.
+  - [Live Demo](https://expense-tracker-omega-red.vercel.app/#add) • [GitHub Repo](https://github.com/Code-With-Kaushal-hub/expense-tracker)
 - **Food Recipe Finder** (React.js, JavaScript, Vite, Bootstrap, Vercel)
   - Dynamic culinary discovery app with modular React components, hooks, and live Vercel deployment.
+  - [Live Demo](https://food-recipe-finder-react.vercel.app/) • [GitHub Repo](https://github.com/Code-With-Kaushal-hub/Food-recipe-finder-react)
 - **Portfolio Website** (HTML5, CSS3, JavaScript, React, Tailwind CSS, Vite)
   - Modern cyber showcase, particle constellation canvas, developer CLI terminal, and iterative UX refinements.
+  - [Live Demo](https://portfolio-website-three-nu-70.vercel.app/) • [GitHub Repo](https://github.com/Code-With-Kaushal-hub/Portfolio-Website)
 
 ### 5. Technical Skills Matrix
 - **Programming Languages**: C++, C, Java, Python

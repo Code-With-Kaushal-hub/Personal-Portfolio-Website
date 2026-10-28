@@ -13,7 +13,10 @@ import {
   Trophy,
   CheckCircle2,
   Copy,
-  ExternalLink
+  ExternalLink,
+  Sparkles,
+  ShieldCheck,
+  Zap
 } from 'lucide-react';
 
 export default function Hero() {
@@ -22,6 +25,7 @@ export default function Hero() {
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [activeHeroTab, setActiveHeroTab] = useState('photo'); // 'photo' or 'code'
 
   useEffect(() => {
     const fullRole = personal.roles[roleIndex];
@@ -109,11 +113,11 @@ export default function Hero() {
               </a>
 
               <a
-                href="#achievements"
+                href="#education"
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-mono text-sm font-medium text-slate-300 bg-slate-900/80 border border-slate-700/80 hover:border-cyan-500/50 hover:text-cyan-300 transition-all duration-300"
               >
-                <Trophy className="w-4 h-4 text-amber-400" />
-                <span>LeetCode (1700+)</span>
+                <Award className="w-4 h-4 text-purple-400" />
+                <span>Certifications</span>
               </a>
 
               <button
@@ -136,15 +140,15 @@ export default function Hero() {
             </div>
 
             {/* Competitive Coding & Social Profiles Row */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-4 text-slate-400">
-              <span className="text-xs font-mono text-slate-500">Profiles:</span>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-4 text-slate-400">
+              <span className="text-xs font-mono text-slate-500">Links:</span>
               
               <a
                 href={socials.leetcode}
                 target="_blank"
                 rel="noreferrer"
                 className="px-2.5 py-1.5 rounded-lg bg-amber-950/30 border border-amber-600/30 text-amber-400 hover:bg-amber-900/40 text-xs font-mono flex items-center gap-1.5 transition-all"
-                title="LeetCode Profile (400+ Solved, 1700+ Rating)"
+                title="LeetCode (400+ Solved, 1700+ Rating)"
               >
                 <Code2 className="w-3.5 h-3.5" />
                 <span>LeetCode</span>
@@ -184,7 +188,7 @@ export default function Hero() {
                 href={socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 hover:text-cyan-400 hover:border-cyan-500/40 transition-all"
+                className="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 hover:text-white hover:border-cyan-500/40 transition-all"
                 aria-label="GitHub Profile"
               >
                 <Github className="w-4 h-4" />
@@ -194,7 +198,7 @@ export default function Hero() {
                 href={socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 hover:text-cyan-400 hover:border-cyan-500/40 transition-all"
+                className="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 transition-all"
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-4 h-4" />
@@ -203,103 +207,83 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Column: Resume Telemetry Card */}
+          {/* Right Column: High-Quality Profile Photo & Cyber Card */}
           <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+            <div className="relative mx-auto max-w-sm sm:max-w-md">
               
-              {/* Outer Glow Card */}
-              <div className="relative rounded-2xl glass-panel p-5 border border-cyan-500/20 shadow-2xl shadow-cyan-950/40">
+              {/* Outer Glow Frame */}
+              <div className="relative rounded-3xl glass-panel p-3 border border-cyan-500/30 shadow-2xl shadow-cyan-950/50 group">
                 
-                {/* Terminal Header */}
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-800/80">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                    <span className="ml-2 text-xs font-mono text-slate-400">kaushal@btech-cse:~</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-[10px] font-mono text-cyan-400 bg-cyan-950/50 px-2 py-0.5 rounded border border-cyan-800/50">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-                    VERIFIED CANDIDATE
-                  </div>
-                </div>
-
-                {/* Simulated Code Profile */}
-                <div className="space-y-3 font-mono text-xs">
-                  <div>
-                    <span className="text-purple-400">const</span>{' '}
-                    <span className="text-cyan-300">kaushalMaurya</span> = &#123;
-                  </div>
+                {/* Photo Presentation */}
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800/80">
+                  <img
+                    src={personal.portrait}
+                    alt={personal.name}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
                   
-                  <div className="pl-4 space-y-1.5 text-slate-300">
-                    <div>
-                      <span className="text-slate-400">education:</span>{' '}
-                      <span className="text-emerald-300">"B.Tech CSE (2023-2027)"</span>,
-                    </div>
-                    <div>
-                      <span className="text-slate-400">college:</span>{' '}
-                      <span className="text-emerald-300">"MPEC, Kanpur"</span>,
-                    </div>
-                    <div>
-                      <span className="text-slate-400">cgpa:</span>{' '}
-                      <span className="text-cyan-300">8.11</span>, <span className="text-slate-500">// 80.8%</span>
-                    </div>
-                    <div>
-                      <span className="text-slate-400">leetcode:</span> &#123;{' '}
-                      <span className="text-slate-400">solved:</span>{' '}
-                      <span className="text-amber-400 font-bold">400+</span>,{' '}
-                      <span className="text-slate-400">rating:</span>{' '}
-                      <span className="text-amber-400 font-bold">1700+</span> &#125;,
-                    </div>
-                    <div>
-                      <span className="text-slate-400">languages:</span> [
-                      <span className="text-amber-300">"C++"</span>,{' '}
-                      <span className="text-amber-300">"C"</span>,{' '}
-                      <span className="text-amber-300">"Java"</span>,{' '}
-                      <span className="text-amber-300">"Python"</span>],
-                    </div>
-                    <div>
-                      <span className="text-slate-400">webStack:</span> [
-                      <span className="text-cyan-300">"ReactJS"</span>,{' '}
-                      <span className="text-cyan-300">"NodeJS"</span>,{' '}
-                      <span className="text-cyan-300">"MySQL"</span>,{' '}
-                      <span className="text-cyan-300">"MongoDB"</span>],
-                    </div>
-                    <div>
-                      <span className="text-slate-400">certifications:</span>{' '}
-                      <span className="text-purple-400">"7+ (NPTEL IIT Madras / KGP)"</span>
+                  {/* Subtle Gradient & Vignette Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                  
+                  {/* Top Floating Badge */}
+                  <div className="absolute top-3 left-3 flex items-center gap-2">
+                    <div className="px-3 py-1 rounded-full bg-slate-900/90 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-medium backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                      <GraduationCap className="w-3.5 h-3.5 text-cyan-400" />
+                      <span>B.Tech CSE • MPEC</span>
                     </div>
                   </div>
 
-                  <div>&#125;;</div>
+                  {/* Top Right Live Dot */}
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[11px] font-mono backdrop-blur-md">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Active</span>
+                  </div>
 
-                  {/* Highlight Chips */}
-                  <div className="pt-2 grid grid-cols-2 gap-2 text-[11px]">
-                    <div className="p-2.5 rounded-lg bg-slate-950/60 border border-slate-800 flex items-center gap-2">
-                      <Award className="w-4 h-4 text-amber-400" />
+                  {/* Bottom Overlay Info Card */}
+                  <div className="absolute bottom-3 inset-x-3 p-4 rounded-xl glass-panel border border-cyan-500/30 backdrop-blur-lg space-y-2">
+                    <div className="flex items-center justify-between">
                       <div>
-                        <div className="text-slate-500 text-[10px]">Java NPTEL IIT KGP</div>
-                        <div className="text-amber-300 font-bold">88% Elite Score</div>
+                        <h3 className="text-base font-bold text-white flex items-center gap-1.5">
+                          <span>{personal.name}</span>
+                          <CheckCircle2 className="w-4 h-4 text-cyan-400 inline" />
+                        </h3>
+                        <p className="text-xs font-mono text-cyan-300">
+                          CGPA: 8.11 (80.8%) • Kanpur
+                        </p>
+                      </div>
+
+                      <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400">
+                        <Trophy className="w-5 h-5" />
                       </div>
                     </div>
-                    <div className="p-2.5 rounded-lg bg-slate-950/60 border border-slate-800 flex items-center gap-2">
-                      <Trophy className="w-4 h-4 text-cyan-400" />
-                      <div>
-                        <div className="text-slate-500 text-[10px]">Python NPTEL IIT M</div>
-                        <div className="text-cyan-300 font-bold">Silver Badge (82%)</div>
+
+                    {/* Quick Stats Pill Row */}
+                    <div className="grid grid-cols-2 gap-2 pt-1 border-t border-slate-800/80 text-[11px] font-mono">
+                      <div className="flex items-center gap-1 text-slate-300">
+                        <span className="text-amber-400 font-bold">1700+</span>
+                        <span className="text-slate-400 text-[10px]">LeetCode Rating</span>
+                      </div>
+                      <div className="flex items-center gap-1 text-slate-300 justify-end">
+                        <span className="text-purple-400 font-bold">7+</span>
+                        <span className="text-slate-400 text-[10px]">Certifications</span>
                       </div>
                     </div>
                   </div>
 
                 </div>
 
-                {/* Bottom decorative bar */}
-                <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                  <span>Phone: +91-8810750577</span>
-                  <span className="text-emerald-400 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    Ready for Internships
+                {/* Sub-bar below photo */}
+                <div className="pt-3 px-2 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                  <span className="flex items-center gap-1 text-cyan-400">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    MERN & C++ DSA
                   </span>
+                  <a
+                    href={`tel:${personal.phone.replace(/[^0-9+]/g, '')}`}
+                    className="hover:text-emerald-400 transition-colors"
+                  >
+                    {personal.phone}
+                  </a>
                 </div>
 
               </div>
